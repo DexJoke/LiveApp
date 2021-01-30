@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zbD-Eo-nTL">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Video Call-->
+        <scene sceneID="lkl-U8-ZWF">
+            <objects>
+                <viewController storyboardIdentifier="VideoCall" id="5Fa-Ws-Krv" customClass="VideoCallVC" customModule="livestream" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wpf-Cq-Tl0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QpR-7t-c5c" userLabel="RemoteVideoView">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="An0-Ee-PJC" customClass="BorderBlackCircleButton" customModule="livestream" customModuleProvider="target">
+                                <rect key="frame" x="322" y="816" width="36" height="36"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="btn_volume_on"/>
+                                <connections>
+                                    <action selector="handleSpeaker:" destination="5Fa-Ws-Krv" eventType="touchUpInside" id="mVV-73-2TB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJg-1D-Ym7" customClass="BorderBlackCircleButton" customModule="livestream" customModuleProvider="target">
+                                <rect key="frame" x="368" y="816" width="36" height="36"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="btn_mic_on"/>
+                                <connections>
+                                    <action selector="handleMic:" destination="5Fa-Ws-Krv" eventType="touchUpInside" id="CnD-aa-gR8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dio-o2-wvB" userLabel="End Call" customClass="BorderBlackCircleButton" customModule="livestream" customModuleProvider="target">
+                                <rect key="frame" x="152" y="816" width="110" height="36"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
+                                <state key="normal" image="btn_end_live"/>
+                                <connections>
+                                    <action selector="handleEndCall:" destination="5Fa-Ws-Krv" eventType="touchUpInside" id="0Zf-Vd-bp6"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yZX-sv-Zdu" userLabel="LocalVideoView" customClass="TVIVideoView">
+                                <rect key="frame" x="249" y="526" width="150" height="250"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="1eM-TW-xYp"/>
+                                    <constraint firstAttribute="height" constant="250" id="SLy-zt-lLW"/>
+                                </constraints>
+                            </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtW-kA-zf8" customClass="BorderBlackCircleButton" customModule="livestream" customModuleProvider="target">
+                                <rect key="frame" x="363" y="103" width="36" height="36"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="btn_change_camera"/>
+                                <connections>
+                                    <action selector="handleFlipCamera:" destination="5Fa-Ws-Krv" eventType="touchUpInside" id="5N8-5K-XMI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wJC-FG-2R1" firstAttribute="bottom" secondItem="dio-o2-wvB" secondAttribute="bottom" constant="10" id="68p-hO-0Hf"/>
+                            <constraint firstItem="QpR-7t-c5c" firstAttribute="trailing" secondItem="wJC-FG-2R1" secondAttribute="trailing" id="9ih-91-jjG"/>
+                            <constraint firstItem="wJC-FG-2R1" firstAttribute="trailing" secondItem="yZX-sv-Zdu" secondAttribute="trailing" constant="15" id="EWM-7E-r1n"/>
+                            <constraint firstItem="QpR-7t-c5c" firstAttribute="top" secondItem="wJC-FG-2R1" secondAttribute="top" id="Re8-gZ-l8U"/>
+                            <constraint firstItem="wJC-FG-2R1" firstAttribute="trailing" secondItem="OJg-1D-Ym7" secondAttribute="trailing" constant="10" id="TQX-p9-LvB"/>
+                            <constraint firstItem="An0-Ee-PJC" firstAttribute="centerY" secondItem="OJg-1D-Ym7" secondAttribute="centerY" id="Tcw-S0-Y2g"/>
+                            <constraint firstItem="wJC-FG-2R1" firstAttribute="trailing" secondItem="VtW-kA-zf8" secondAttribute="trailing" constant="15" id="Uz2-5O-kni"/>
+                            <constraint firstItem="VtW-kA-zf8" firstAttribute="top" secondItem="wJC-FG-2R1" secondAttribute="top" constant="15" id="Xvt-CI-Y16"/>
+                            <constraint firstItem="QpR-7t-c5c" firstAttribute="leading" secondItem="wJC-FG-2R1" secondAttribute="leading" id="ZCj-xu-kI7"/>
+                            <constraint firstItem="QpR-7t-c5c" firstAttribute="bottom" secondItem="wJC-FG-2R1" secondAttribute="bottom" id="g8A-MF-izM"/>
+                            <constraint firstItem="wJC-FG-2R1" firstAttribute="bottom" secondItem="OJg-1D-Ym7" secondAttribute="bottom" constant="10" id="gWl-RY-8Fk"/>
+                            <constraint firstItem="OJg-1D-Ym7" firstAttribute="leading" secondItem="An0-Ee-PJC" secondAttribute="trailing" constant="10" id="nYs-yF-DRQ"/>
+                            <constraint firstItem="An0-Ee-PJC" firstAttribute="top" secondItem="yZX-sv-Zdu" secondAttribute="bottom" constant="40" id="tlI-7h-g73"/>
+                            <constraint firstItem="dio-o2-wvB" firstAttribute="centerX" secondItem="Wpf-Cq-Tl0" secondAttribute="centerX" id="yAO-vb-2fJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wJC-FG-2R1"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Video Call" id="lHz-8P-At8"/>
+                    <connections>
+                        <outlet property="flipCameraButton" destination="VtW-kA-zf8" id="vqt-fy-MSh"/>
+                        <outlet property="localVideoView" destination="yZX-sv-Zdu" id="2Vn-qL-aCB"/>
+                        <outlet property="micButton" destination="OJg-1D-Ym7" id="2Dx-Ej-ICP"/>
+                        <outlet property="remoteVideoView" destination="QpR-7t-c5c" id="4hz-jp-TNn"/>
+                        <outlet property="speckerButton" destination="An0-Ee-PJC" id="nj7-Bc-Zus"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y7D-y7-wo4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="289.85507246376812" y="-12.053571428571429"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eSg-om-cwK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zbD-Eo-nTL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5O1-Pc-uJL">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5Fa-Ws-Krv" kind="relationship" relationship="rootViewController" id="NeW-L8-1hx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kfJ-mZ-0hV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-620.28985507246387" y="-12.053571428571429"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btn_change_camera" width="36" height="36"/>
+        <image name="btn_end_live" width="110" height="36"/>
+        <image name="btn_mic_on" width="36" height="36"/>
+        <image name="btn_volume_on" width="36" height="36"/>
+    </resources>
+</document>
