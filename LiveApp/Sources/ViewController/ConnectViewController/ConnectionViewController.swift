@@ -27,9 +27,16 @@ class ConnectionViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = ConnectionPresenter(delegate: self)
+        txtUserName.text = "user" + "_" + randomString(length: 3)
+        txtRoomName.text = "room1"
         
         addGradienBackground()
         updateViewForLive()
+    }
+    
+    func randomString(length: Int) -> String {
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        return String((0..<length).map{ _ in letters.randomElement()! })
     }
     
     @IBAction func onPressedHostCheckbox(_ sender: CheckBox) {
@@ -87,7 +94,17 @@ extension ConnectionViewController: ConnectionDelegate {
     
     func onRequestTokenSuccess(token: TokenModel) {
         hideLoading()
-        pushViewController(VideoCallVC.create(tokenModel: token))
+        switch connectionType {
+        case .live:
+            let vc = ckHost.isChecked ? LiveStreamHostVC.create(tokenModel: token) : LiveStreamViewerVC.create(tokenModel: token)
+            pushViewController(vc)
+            break
+        case .videoCall:
+            pushViewController(VideoCallVC.create(tokenModel: token))
+            break
+        case .none:
+            break
+        }
     }
     
     func onRequestTokenFailed(message: String?) {

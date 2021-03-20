@@ -10,14 +10,21 @@ import UIKit
 import TwilioVideo
 import AVFoundation
 import SwifterSwift
+import SnapKit
 
 class VideoCallVC: BaseViewController {
     
+    @IBOutlet weak var constraintBottomListBackground: NSLayoutConstraint!
+    @IBOutlet weak var constraintBottomButtonViewContainer: NSLayoutConstraint!
     @IBOutlet weak var localVideoView: VideoView!
     @IBOutlet weak var remoteVideoView: UIView!
     @IBOutlet weak var micButton: UIButton!
-    @IBOutlet weak var speckerButton: UIButton!
     @IBOutlet weak var flipCameraButton: UIButton!
+    @IBOutlet weak var mCollectionView: UICollectionView!
+
+    let arrayBackgroundImage = ["none", "HangMa", "Moon", "sea","sakura_image"]
+    var opencvCam: OpencvCamera!
+    var webViewSource: CustomVideosource?
     
     private var tokenModel: TokenModel!
     var room: Room?
@@ -54,12 +61,45 @@ class VideoCallVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        opencvCam = OpencvCamera(controller: self)
+        opencvCam.start()
+        
+        
         if PlatformUtils.isSimulator {
             self.localVideoView.removeFromSuperview()
         } else {
-            self.startLocalVideoView()
+            self.setupLocalMedia()
         }
+        
+        mCollectionView.delegate = self
+        mCollectionView.dataSource = self
+        mCollectionView.register(UINib(nibName: "ImageViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageViewCell")
+        
+        
         connect()
+    }
+    
+    func setupLocalMedia() {
+        let source = CustomVideosource(aView: self.view)
+
+        guard let videoTrack = LocalVideoTrack(source: source, enabled: true, name: "Screen") else {
+            
+            return
+        }
+
+        self.localVideoTrack = videoTrack
+        webViewSource = source
+        let localView = VideoView(frame: view.bounds)
+        localView.contentMode = .scaleAspectFill
+        localVideoTrack?.addRenderer(localView)
+        localVideoView.addSubview(localView)
+
+        localView.snp.makeConstraints({ make in
+            make.leading.equalToSuperview()
+            make.top.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        })
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -78,6 +118,21 @@ class VideoCallVC: BaseViewController {
     }
     
     //MARK: Action
+    @IBAction func showListBackground(_ sender: UIButton) {
+        let isShowListBackground = constraintBottomListBackground.constant == 0
+        sender.isEnabled = false
+        
+        UIView.animate(withDuration: 0.3) {
+            self.constraintBottomButtonViewContainer.constant = isShowListBackground ? 0 : -110
+            self.constraintBottomListBackground.constant = isShowListBackground ? -110 : 0
+            self.view.layoutIfNeeded()
+        } completion: { (_) in
+            sender.isEnabled = true
+        }
+
+
+    }
+    
     @IBAction func handleEndCall(_ sender: Any) {
         self.room!.disconnect()
     }
@@ -86,38 +141,15 @@ class VideoCallVC: BaseViewController {
         if (self.localAudioTrack != nil) {
             self.localAudioTrack?.isEnabled = !(self.localAudioTrack?.isEnabled)!
             if (self.localAudioTrack?.isEnabled == true) {
-                self.micButton.setImage(UIImage(named: "btn_mic_on")!, for: .normal)
+                self.micButton.setImage(UIImage(named: "ic_micro_on")!, for: .normal)
             } else {
-                self.micButton.setImage(UIImage(named: "btn_mic_off")!, for: .normal)
+                self.micButton.setImage(UIImage(named: "ic_micro_off")!, for: .normal)
             }
         }
-    }
-    
-    @IBAction func handleSpeaker(_ sender: Any) {
-        self.isLoudSpeaker = !isLoudSpeaker
-        let nameImage = isLoudSpeaker ? "btn_volume_on" : "btn_volume_off"
-        self.speckerButton.setImage(UIImage(named: nameImage)!, for: .normal)
-        self.remoteAudioTrack?.isPlaybackEnabled = isLoudSpeaker
     }
     
     @IBAction func handleFlipCamera(_ sender: Any) {
-        var newDevice: AVCaptureDevice?
-        if let camera = self.camera, let captureDevice = camera.device {
-            if captureDevice.position == .front {
-                newDevice = CameraSource.captureDevice(position: .back)
-            } else {
-                newDevice = CameraSource.captureDevice(position: .front)
-            }
-            if let newDevice = newDevice {
-                camera.selectCaptureDevice(newDevice) { (captureDevice, videoFormat, error) in
-                    if let error = error {
-                        print("Error selecting capture device.\ncode = \((error as NSError).code) error = \(error.localizedDescription)")
-                    } else {
-                        self.localVideoView.shouldMirror = (captureDevice.position == .front)
-                    }
-                }
-            }
-        }
+        opencvCam.change()
     }
     
     private func connect() {
@@ -142,10 +174,6 @@ class VideoCallVC: BaseViewController {
             if (localAudioTrack == nil) {
                 showAlert(title: "", message: "Failed to create audio track")
             }
-        }
-        // Create a video track which captures from the camera.
-        if (localVideoTrack == nil) {
-            self.startLocalVideoView()
         }
     }
     
@@ -191,47 +219,6 @@ class VideoCallVC: BaseViewController {
         self.remoteView!.contentMode = .scaleAspectFit;
         self.remoteVideoView.addXibView(view: self.remoteView!)
     }
-    
-    private func startLocalVideoView() {
-        if PlatformUtils.isSimulator {
-            return
-        }
-        let frontCamera = CameraSource.captureDevice(position: .front)
-        let backCamera = CameraSource.captureDevice(position: .back)
-        if (frontCamera != nil || backCamera != nil) {
-            let options = CameraSourceOptions { (builder) in
-                // To support building with Xcode 10.x.
-                #if XCODE_1100
-                if #available(iOS 13.0, *) {
-                    // Track UIWindowScene events for the key window's scene.
-                    // The example app disables multi-window support in the .plist (see UIApplicationSceneManifestKey).
-                    builder.orientationTracker = UserInterfaceTracker(scene: UIApplication.shared.keyWindow!.windowScene!)
-                }
-                #endif
-            }
-            // Preview our local camera track in the local video preview view.
-            camera = CameraSource(options: options, delegate: self)
-            localVideoTrack = LocalVideoTrack(source: camera!, enabled: true, name: "Camera")
-            
-            if (frontCamera != nil && backCamera != nil) {
-                self.flipCameraButton.isHidden = false
-            }
-            
-            // Add renderer to video track for local preview
-            localVideoTrack!.addRenderer(self.localVideoView)
-            camera!.startCapture(device: frontCamera != nil ? frontCamera! : backCamera!) { (captureDevice, videoFormat, error) in
-                if let error = error {
-                    self.showAlert(title: "Error", message: "Capture failed with error.\ncode = \((error as NSError).code) error = \(error.localizedDescription)")
-                } else {
-                    self.localVideoView.shouldMirror = (captureDevice.position == .front)
-                }
-            }
-        }
-        else {
-            self.showAlert(title: "", message: "No front or back capture device found!")
-        }
-    }
-    
 }
 
 // MARK:- CameraSourceDelegate
@@ -263,14 +250,6 @@ extension VideoCallVC : RoomDelegate {
         self.room = nil
     }
     
-    func roomIsReconnecting(room: Room, error: Error) {
-        print("Reconnecting to room \(room.name), error = \(String(describing: error))")
-    }
-    
-    func roomDidReconnect(room: Room) {
-        print("Reconnected to room \(room.name)")
-    }
-    
     func participantDidConnect(room: Room, participant: RemoteParticipant) {
         // Listen for events from all Participants to decide which RemoteVideoTrack to render.
         participant.delegate = self
@@ -285,27 +264,6 @@ extension VideoCallVC : RoomDelegate {
 
 // MARK:- RemoteParticipantDelegate
 extension VideoCallVC : RemoteParticipantDelegate {
-    
-    func remoteParticipantDidPublishVideoTrack(participant: RemoteParticipant, publication: RemoteVideoTrackPublication) {
-        // Remote Participant has offered to share the video Track.
-        print("Participant \(participant.identity) published \(publication.trackName) video track")
-    }
-    
-    func remoteParticipantDidUnpublishVideoTrack(participant: RemoteParticipant, publication: RemoteVideoTrackPublication) {
-        // Remote Participant has stopped sharing the video Track.
-        print("Participant \(participant.identity) unpublished \(publication.trackName) video track")
-    }
-    
-    func remoteParticipantDidPublishAudioTrack(participant: RemoteParticipant, publication: RemoteAudioTrackPublication) {
-        // Remote Participant has offered to share the audio Track.
-        print("Participant \(participant.identity) published \(publication.trackName) audio track")
-    }
-    
-    func remoteParticipantDidUnpublishAudioTrack(participant: RemoteParticipant, publication: RemoteAudioTrackPublication) {
-        // Remote Participant has stopped sharing the audio Track.
-        print("Participant \(participant.identity) unpublished \(publication.trackName) audio track")
-    }
-    
     func didSubscribeToVideoTrack(videoTrack: RemoteVideoTrack, publication: RemoteVideoTrackPublication, participant: RemoteParticipant) {
         // The LocalParticipant is subscribed to the RemoteParticipant's video Track. Frames will begin to arrive now.
         print("Subscribed to \(publication.trackName) video track for Participant \(participant.identity)")
@@ -338,41 +296,46 @@ extension VideoCallVC : RemoteParticipantDelegate {
         self.remoteAudioTrack = audioTrack
         print("Subscribed to \(publication.trackName) audio track for Participant \(participant.identity)")
     }
-    
-    func didUnsubscribeFromAudioTrack(audioTrack: RemoteAudioTrack, publication: RemoteAudioTrackPublication, participant: RemoteParticipant) {
-        // We are unsubscribed from the remote Participant's audio Track. We will no longer receive the
-        // remote Participant's audio.
-        print("Unsubscribed from \(publication.trackName) audio track for Participant \(participant.identity)")
-    }
-    
-    func remoteParticipantDidEnableVideoTrack(participant: RemoteParticipant, publication: RemoteVideoTrackPublication) {
-        print("Participant \(participant.identity) enabled \(publication.trackName) video track")
-    }
-    
-    func remoteParticipantDidDisableVideoTrack(participant: RemoteParticipant, publication: RemoteVideoTrackPublication) {
-        print("Participant \(participant.identity) disabled \(publication.trackName) video track")
-    }
-    
-    func remoteParticipantDidEnableAudioTrack(participant: RemoteParticipant, publication: RemoteAudioTrackPublication) {
-        print("Participant \(participant.identity) enabled \(publication.trackName) audio track")
-    }
-    
-    func remoteParticipantDidDisableAudioTrack(participant: RemoteParticipant, publication: RemoteAudioTrackPublication) {
-        print("Participant \(participant.identity) disabled \(publication.trackName) audio track")
-    }
-    
-    func didFailToSubscribeToAudioTrack(publication: RemoteAudioTrackPublication, error: Error, participant: RemoteParticipant) {
-        print("FailedToSubscribe \(publication.trackName) audio track, error = \(String(describing: error))")
-    }
-    
-    func didFailToSubscribeToVideoTrack(publication: RemoteVideoTrackPublication, error: Error, participant: RemoteParticipant) {
-        print("FailedToSubscribe \(publication.trackName) video track, error = \(String(describing: error))")
-    }
 }
 
 // MARK:- VideoViewDelegate
 extension VideoCallVC : VideoViewDelegate {
     func videoViewDimensionsDidChange(view: VideoView, dimensions: CMVideoDimensions) {
         self.view.setNeedsLayout()
+    }
+}
+
+extension VideoCallVC : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arrayBackgroundImage.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = mCollectionView.dequeueReusableCell(withReuseIdentifier: "ImageViewCell", for: indexPath) as! ImageViewCell
+        cell.bindData(arrayBackgroundImage[indexPath.row], indexPath)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = mCollectionView.frame.height - 20
+        return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row != 0 {
+            let imageName = arrayBackgroundImage[indexPath.row]
+            let image = UIImage(named: imageName)!
+            opencvCam.addBackground(image)
+        } else {
+            opencvCam.addBackground(nil)
+        }
+    }
+}
+
+extension VideoCallVC: OpencvCameraDelegate {
+    func onAddBackground(_ resultImage: UIImage!) {
+//        self.previewImage.image = resultImage
+        
+        webViewSource?.deliverCapturedImage(image: resultImage, orientation: .up, timestamp: CACurrentMediaTime())
     }
 }

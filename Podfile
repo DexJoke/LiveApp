@@ -15,5 +15,6 @@ target 'LiveApp' do
   pod 'TwilioVideo', '~> 3.2'
   pod 'TwilioChatClient', '~> 3.0.1'
   pod 'SwifterSwift'
-
+  pod 'TensorFlowLite', '~> 1.13.1'
+  pod 'OpenCV2', '~> 3.4.0'
 end

@@ -86,7 +86,7 @@
             </objects>
             <point key="canvasLocation" x="492.75362318840581" y="128.57142857142856"/>
         </scene>
-        <!--Connection View Controller-->
+        <!--Connection-->
         <scene sceneID="I1P-Nr-z5c">
             <objects>
                 <viewController id="rQu-hs-yGu" customClass="ConnectionViewController" customModule="LiveApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -237,7 +237,7 @@
                             <constraint firstItem="zWh-KC-sFV" firstAttribute="centerY" secondItem="nwD-72-hNk" secondAttribute="centerY" constant="-80" id="qF1-ud-msb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="cPW-cD-ged"/>
+                    <navigationItem key="navigationItem" title="Connection" id="cPW-cD-ged"/>
                     <connections>
                         <outlet property="ckHost" destination="QMm-Pz-0kl" id="veS-Qa-2kI"/>
                         <outlet property="ckViewer" destination="m5f-Rw-lOR" id="lMj-VW-vfI"/>

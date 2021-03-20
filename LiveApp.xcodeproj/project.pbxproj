@@ -15,6 +15,14 @@
 		2361A85325C5715C005F7B1A /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2361A85225C5715C005F7B1A /* CheckBox.swift */; };
 		2361A85625C5B91F005F7B1A /* TokeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2361A85525C5B91E005F7B1A /* TokeApi.swift */; };
 		2361A85A25C5BA01005F7B1A /* ConnectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2361A85925C5BA01005F7B1A /* ConnectionPresenter.swift */; };
+		23AB2875260652EB0046E0C4 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB2873260652EB0046E0C4 /* ImageViewCell.swift */; };
+		23AB2876260652EB0046E0C4 /* ImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23AB2874260652EB0046E0C4 /* ImageViewCell.xib */; };
+		23AB2884260653530046E0C4 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 23AB287A260653530046E0C4 /* background.jpg */; };
+		23AB2885260653530046E0C4 /* deeplabv3_257_mv_gpu.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 23AB287E260653530046E0C4 /* deeplabv3_257_mv_gpu.tflite */; };
+		23AB2886260653530046E0C4 /* haarcascade_frontalface_default.xml in Resources */ = {isa = PBXBuildFile; fileRef = 23AB287F260653530046E0C4 /* haarcascade_frontalface_default.xml */; };
+		23AB2887260653530046E0C4 /* TfliteWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 23AB2880260653530046E0C4 /* TfliteWrapper.mm */; };
+		23AB2888260653530046E0C4 /* OpencvCamera.mm in Sources */ = {isa = PBXBuildFile; fileRef = 23AB2881260653530046E0C4 /* OpencvCamera.mm */; };
+		23AB28982606538D0046E0C4 /* CustomVideosource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB28972606538D0046E0C4 /* CustomVideosource.swift */; };
 		23AD74A7260649F90047FE1A /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD74A5260649F90047FE1A /* ImagePickerManager.swift */; };
 		23AD74A8260649F90047FE1A /* ChannelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD74A6260649F90047FE1A /* ChannelManager.swift */; };
 		23B2080625C01BD000927AA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B2080525C01BD000927AA1 /* AppDelegate.swift */; };
@@ -71,6 +79,17 @@
 		2361A85225C5715C005F7B1A /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		2361A85525C5B91E005F7B1A /* TokeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokeApi.swift; sourceTree = "<group>"; };
 		2361A85925C5BA01005F7B1A /* ConnectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionPresenter.swift; sourceTree = "<group>"; };
+		23AB2873260652EB0046E0C4 /* ImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
+		23AB2874260652EB0046E0C4 /* ImageViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewCell.xib; sourceTree = "<group>"; };
+		23AB287A260653530046E0C4 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		23AB287B260653530046E0C4 /* OpencvCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpencvCamera.h; sourceTree = "<group>"; };
+		23AB287C260653530046E0C4 /* TfliteWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TfliteWrapper.h; sourceTree = "<group>"; };
+		23AB287E260653530046E0C4 /* deeplabv3_257_mv_gpu.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = deeplabv3_257_mv_gpu.tflite; sourceTree = "<group>"; };
+		23AB287F260653530046E0C4 /* haarcascade_frontalface_default.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_default.xml; sourceTree = "<group>"; };
+		23AB2880260653530046E0C4 /* TfliteWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TfliteWrapper.mm; sourceTree = "<group>"; };
+		23AB2881260653530046E0C4 /* OpencvCamera.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpencvCamera.mm; sourceTree = "<group>"; };
+		23AB28972606538D0046E0C4 /* CustomVideosource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomVideosource.swift; sourceTree = "<group>"; };
+		23AB28A0260653E00046E0C4 /* LiveApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LiveApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		23AD74A5260649F90047FE1A /* ImagePickerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePickerManager.swift; path = ../../../../../../.Trash/ImagePickerManager.swift; sourceTree = "<group>"; };
 		23AD74A6260649F90047FE1A /* ChannelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChannelManager.swift; path = ../../../../../../.Trash/ChannelManager.swift; sourceTree = "<group>"; };
 		23B2080225C01BD000927AA1 /* LiveApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +172,37 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
+		23AB2872260652EB0046E0C4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				23AB2873260652EB0046E0C4 /* ImageViewCell.swift */,
+				23AB2874260652EB0046E0C4 /* ImageViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		23AB2878260653530046E0C4 /* Deeplab */ = {
+			isa = PBXGroup;
+			children = (
+				23AB287A260653530046E0C4 /* background.jpg */,
+				23AB287B260653530046E0C4 /* OpencvCamera.h */,
+				23AB287C260653530046E0C4 /* TfliteWrapper.h */,
+				23AB287D260653530046E0C4 /* Model */,
+				23AB2880260653530046E0C4 /* TfliteWrapper.mm */,
+				23AB2881260653530046E0C4 /* OpencvCamera.mm */,
+			);
+			path = Deeplab;
+			sourceTree = "<group>";
+		};
+		23AB287D260653530046E0C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				23AB287E260653530046E0C4 /* deeplabv3_257_mv_gpu.tflite */,
+				23AB287F260653530046E0C4 /* haarcascade_frontalface_default.xml */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		23B207F925C01BD000927AA1 = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +241,7 @@
 		23B2082625C01C8300927AA1 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				23AB28A0260653E00046E0C4 /* LiveApp-Bridging-Header.h */,
 				23B2082725C01CAA00927AA1 /* App */,
 				23B2082925C01CF900927AA1 /* Const */,
 				23CEAA4C25C2C82400592CE9 /* Manager */,
@@ -200,6 +251,7 @@
 				23B2085625C01F1900927AA1 /* Manager */,
 				23B2082C25C01CF900927AA1 /* Base */,
 				23B2083925C01CFA00927AA1 /* Util */,
+				23AB2878260653530046E0C4 /* Deeplab */,
 				23B2087925C020CD00927AA1 /* Api */,
 				23B2089A25C0233200927AA1 /* ViewController */,
 			);
@@ -373,7 +425,9 @@
 		23CEAA1725C2BFDF00592CE9 /* VideoCallViewController */ = {
 			isa = PBXGroup;
 			children = (
+				23AB2872260652EB0046E0C4 /* Cell */,
 				23CEAA1825C2BFDF00592CE9 /* VideoCallVC.swift */,
+				23AB28972606538D0046E0C4 /* CustomVideosource.swift */,
 				23CEAA1925C2BFDF00592CE9 /* VideoCall.storyboard */,
 			);
 			path = VideoCallViewController;
@@ -521,13 +575,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23AB2885260653530046E0C4 /* deeplabv3_257_mv_gpu.tflite in Resources */,
 				2361A84025C55CC5005F7B1A /* ConnectViewController.storyboard in Resources */,
+				23AB2884260653530046E0C4 /* background.jpg in Resources */,
+				23AB2876260652EB0046E0C4 /* ImageViewCell.xib in Resources */,
 				23CEAA2825C2BFDF00592CE9 /* LiveStreamViewer.storyboard in Resources */,
 				23CEAA2625C2BFDF00592CE9 /* LiveStreamHost.storyboard in Resources */,
 				23B2081225C01BD100927AA1 /* LaunchScreen.storyboard in Resources */,
 				23B2089F25C0240400927AA1 /* SplashViewController.storyboard in Resources */,
 				23CEAA2525C2BFDF00592CE9 /* VideoCall.storyboard in Resources */,
 				23CEAA2A25C2BFDF00592CE9 /* TextChatCell.xib in Resources */,
+				23AB2886260653530046E0C4 /* haarcascade_frontalface_default.xml in Resources */,
 				23B2080F25C01BD100927AA1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,6 +654,7 @@
 				23CEAA5B25C2C9C100592CE9 /* Utils.swift in Sources */,
 				2361A83D25C55C48005F7B1A /* OptionViewController.swift in Sources */,
 				23B208A025C0240400927AA1 /* SplashViewController.swift in Sources */,
+				23AB2887260653530046E0C4 /* TfliteWrapper.mm in Sources */,
 				2361A84825C5666D005F7B1A /* ConstraintUtil.swift in Sources */,
 				23CEAA5525C2C8C400592CE9 /* UserInforModel.swift in Sources */,
 				23CEAA3925C2C27800592CE9 /* TokenModel.swift in Sources */,
@@ -606,9 +665,12 @@
 				23B2083E25C01CFA00927AA1 /* AppConst.swift in Sources */,
 				23B2087125C01FAF00927AA1 /* UIViewExtension.swift in Sources */,
 				23B2084825C01CFA00927AA1 /* ViewUtil.swift in Sources */,
+				23AB2888260653530046E0C4 /* OpencvCamera.mm in Sources */,
 				23B2089725C020CD00927AA1 /* HTTPStatusCode.swift in Sources */,
 				23B2085C25C01F1900927AA1 /* UserInforManager.swift in Sources */,
+				23AB28982606538D0046E0C4 /* CustomVideosource.swift in Sources */,
 				23B2089625C020CD00927AA1 /* BaseError.swift in Sources */,
+				23AB2875260652EB0046E0C4 /* ImageViewCell.swift in Sources */,
 				23B2084325C01CFA00927AA1 /* BaseViewController.swift in Sources */,
 				23B2084925C01CFA00927AA1 /* Color.swift in Sources */,
 				23CEAA4A25C2C7B200592CE9 /* PointAnimationView.swift in Sources */,
@@ -776,6 +838,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dex.LiveApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LiveApp/Sources/LiveApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -798,6 +861,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dex.LiveApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LiveApp/Sources/LiveApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p6K-6d-tsd" userLabel="TopView">
-                                <rect key="frame" x="0.0" y="54" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="54" width="375" height="57.333333333333343"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cip-oj-F1o">
                                         <rect key="frame" x="329" y="0.0" width="36" height="36"/>
@@ -36,17 +36,10 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZd-a4-tOs" userLabel="InforView">
-                                        <rect key="frame" x="10.000000000000007" y="0.0" width="116.66666666666669" height="36"/>
+                                        <rect key="frame" x="10" y="0.0" width="86.666666666666671" height="33.333333333333336"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-avatar" translatesAutoresizingMaskIntoConstraints="NO" id="s3m-5Z-bny" customClass="CircleImageView" customModule="LiveApp" customModuleProvider="target">
-                                                <rect key="frame" x="6" y="6" width="24" height="24"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="24" id="3SZ-l6-Wba"/>
-                                                    <constraint firstAttribute="width" constant="24" id="Bjp-B9-fR5"/>
-                                                </constraints>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oD1-ir-Yqh">
-                                                <rect key="frame" x="40.000000000000007" y="11.333333333333329" width="66.666666666666686" height="13.333333333333336"/>
+                                                <rect key="frame" x="10" y="10" width="66.666666666666671" height="13.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -54,12 +47,10 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.24313725489999999" green="0.18039215689999999" blue="0.058823529409999999" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="oD1-ir-Yqh" firstAttribute="centerY" secondItem="s3m-5Z-bny" secondAttribute="centerY" id="5Av-5T-4H0"/>
-                                            <constraint firstItem="oD1-ir-Yqh" firstAttribute="leading" secondItem="s3m-5Z-bny" secondAttribute="trailing" constant="10" id="B8m-qC-bD2"/>
-                                            <constraint firstItem="s3m-5Z-bny" firstAttribute="top" secondItem="WZd-a4-tOs" secondAttribute="top" constant="6" id="LDR-xx-2em"/>
-                                            <constraint firstItem="s3m-5Z-bny" firstAttribute="leading" secondItem="WZd-a4-tOs" secondAttribute="leading" constant="6" id="YU0-xL-4fO"/>
+                                            <constraint firstAttribute="bottom" secondItem="oD1-ir-Yqh" secondAttribute="bottom" constant="10" id="0Qy-9l-IKy"/>
                                             <constraint firstAttribute="trailing" secondItem="oD1-ir-Yqh" secondAttribute="trailing" constant="10" id="alz-2h-hKv"/>
-                                            <constraint firstAttribute="bottom" secondItem="s3m-5Z-bny" secondAttribute="bottom" constant="6" id="ndF-L7-IJc"/>
+                                            <constraint firstItem="oD1-ir-Yqh" firstAttribute="leading" secondItem="WZd-a4-tOs" secondAttribute="leading" constant="10" id="bcr-CL-7aZ"/>
+                                            <constraint firstItem="oD1-ir-Yqh" firstAttribute="top" secondItem="WZd-a4-tOs" secondAttribute="top" constant="10" id="m99-b7-2Ge"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -79,13 +70,13 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="unu-9n-RzN" userLabel="PointView">
-                                        <rect key="frame" x="10.000000000000004" y="40" width="63.333333333333343" height="20"/>
+                                        <rect key="frame" x="10.000000000000004" y="37.333333333333329" width="63.333333333333343" height="20"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_point_small" translatesAutoresizingMaskIntoConstraints="NO" id="33M-Gc-bPs">
                                                 <rect key="frame" x="6" y="4" width="12" height="12"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxm-xZ-7PA">
-                                                <rect key="frame" x="22" y="3.3333333333333295" width="26.333333333333329" height="13.333333333333336"/>
+                                                <rect key="frame" x="22" y="3.3333333333333437" width="26.333333333333329" height="13.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -209,7 +200,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJZ-ce-t6n" userLabel="InputView">
                                                         <rect key="frame" x="10" y="8" width="299" height="32"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="コメントを入力" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YEF-Ol-Q63">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YEF-Ol-Q63">
                                                                 <rect key="frame" x="8" y="0.0" width="283" height="32"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
@@ -331,7 +322,6 @@
                         <outlet property="btnSend" destination="byI-ET-l00" id="KXV-k7-Deq"/>
                         <outlet property="constraintBottomContentView" destination="kiA-Gf-Sne" id="6im-z9-MRZ"/>
                         <outlet property="fivePointAnimationView" destination="JFj-t7-fFp" id="mmT-lr-Ct9"/>
-                        <outlet property="hostAvatarImgV" destination="s3m-5Z-bny" id="fy1-C6-nhS"/>
                         <outlet property="hostInforView" destination="WZd-a4-tOs" id="5Zk-cN-gfj"/>
                         <outlet property="likeAnimationView" destination="V1K-pP-cpn" id="o4p-xr-LXd"/>
                         <outlet property="onePointAnimationView" destination="zsI-wZ-G8O" id="0Jo-hX-HQ4"/>
@@ -377,7 +367,6 @@
         <image name="btn_gift_04" width="36" height="36"/>
         <image name="btn_like" width="36" height="36"/>
         <image name="btn_volume_on" width="36" height="36"/>
-        <image name="default-avatar" width="100" height="100"/>
         <image name="icon_point_small" width="12" height="12"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
