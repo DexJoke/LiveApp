@@ -15,6 +15,8 @@
 		2361A85325C5715C005F7B1A /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2361A85225C5715C005F7B1A /* CheckBox.swift */; };
 		2361A85625C5B91F005F7B1A /* TokeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2361A85525C5B91E005F7B1A /* TokeApi.swift */; };
 		2361A85A25C5BA01005F7B1A /* ConnectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2361A85925C5BA01005F7B1A /* ConnectionPresenter.swift */; };
+		23AD74A7260649F90047FE1A /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD74A5260649F90047FE1A /* ImagePickerManager.swift */; };
+		23AD74A8260649F90047FE1A /* ChannelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD74A6260649F90047FE1A /* ChannelManager.swift */; };
 		23B2080625C01BD000927AA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B2080525C01BD000927AA1 /* AppDelegate.swift */; };
 		23B2080F25C01BD100927AA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23B2080E25C01BD100927AA1 /* Assets.xcassets */; };
 		23B2081225C01BD100927AA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23B2081025C01BD100927AA1 /* LaunchScreen.storyboard */; };
@@ -53,8 +55,6 @@
 		23CEAA3925C2C27800592CE9 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CEAA3825C2C27800592CE9 /* TokenModel.swift */; };
 		23CEAA4925C2C7B200592CE9 /* LikeAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CEAA4725C2C7B200592CE9 /* LikeAnimationView.swift */; };
 		23CEAA4A25C2C7B200592CE9 /* PointAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CEAA4825C2C7B200592CE9 /* PointAnimationView.swift */; };
-		23CEAA5125C2C82400592CE9 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CEAA4E25C2C82400592CE9 /* ImagePickerManager.swift */; };
-		23CEAA5225C2C82400592CE9 /* ChannelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CEAA5025C2C82400592CE9 /* ChannelManager.swift */; };
 		23CEAA5525C2C8C400592CE9 /* UserInforModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CEAA5425C2C8C400592CE9 /* UserInforModel.swift */; };
 		23CEAA5825C2C93000592CE9 /* UserDefaultExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CEAA5725C2C93000592CE9 /* UserDefaultExtention.swift */; };
 		23CEAA5B25C2C9C100592CE9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CEAA5A25C2C9C100592CE9 /* Utils.swift */; };
@@ -71,6 +71,8 @@
 		2361A85225C5715C005F7B1A /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		2361A85525C5B91E005F7B1A /* TokeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokeApi.swift; sourceTree = "<group>"; };
 		2361A85925C5BA01005F7B1A /* ConnectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionPresenter.swift; sourceTree = "<group>"; };
+		23AD74A5260649F90047FE1A /* ImagePickerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePickerManager.swift; path = ../../../../../../.Trash/ImagePickerManager.swift; sourceTree = "<group>"; };
+		23AD74A6260649F90047FE1A /* ChannelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChannelManager.swift; path = ../../../../../../.Trash/ChannelManager.swift; sourceTree = "<group>"; };
 		23B2080225C01BD000927AA1 /* LiveApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23B2080525C01BD000927AA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23B2080E25C01BD100927AA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,8 +113,6 @@
 		23CEAA3825C2C27800592CE9 /* TokenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		23CEAA4725C2C7B200592CE9 /* LikeAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeAnimationView.swift; sourceTree = "<group>"; };
 		23CEAA4825C2C7B200592CE9 /* PointAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointAnimationView.swift; sourceTree = "<group>"; };
-		23CEAA4E25C2C82400592CE9 /* ImagePickerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
-		23CEAA5025C2C82400592CE9 /* ChannelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelManager.swift; sourceTree = "<group>"; };
 		23CEAA5425C2C8C400592CE9 /* UserInforModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInforModel.swift; sourceTree = "<group>"; };
 		23CEAA5725C2C93000592CE9 /* UserDefaultExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultExtention.swift; sourceTree = "<group>"; };
 		23CEAA5A25C2C9C100592CE9 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -438,27 +438,11 @@
 		23CEAA4C25C2C82400592CE9 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				23CEAA4D25C2C82400592CE9 /* Camera */,
-				23CEAA4F25C2C82400592CE9 /* TwilioChat */,
+				23AD74A6260649F90047FE1A /* ChannelManager.swift */,
+				23AD74A5260649F90047FE1A /* ImagePickerManager.swift */,
 			);
 			name = Manager;
 			path = ../../../livestream/livestream/Sources/Manager;
-			sourceTree = "<group>";
-		};
-		23CEAA4D25C2C82400592CE9 /* Camera */ = {
-			isa = PBXGroup;
-			children = (
-				23CEAA4E25C2C82400592CE9 /* ImagePickerManager.swift */,
-			);
-			path = Camera;
-			sourceTree = "<group>";
-		};
-		23CEAA4F25C2C82400592CE9 /* TwilioChat */ = {
-			isa = PBXGroup;
-			children = (
-				23CEAA5025C2C82400592CE9 /* ChannelManager.swift */,
-			);
-			path = TwilioChat;
 			sourceTree = "<group>";
 		};
 		7C1C183646B4D26556591170 /* Pods */ = {
@@ -608,7 +592,6 @@
 				23B2083F25C01CFA00927AA1 /* ApiUrl.swift in Sources */,
 				23B2089525C020CD00927AA1 /* ErrorResponse.swift in Sources */,
 				23B2088A25C020CD00927AA1 /* BaseAPI.swift in Sources */,
-				23CEAA5125C2C82400592CE9 /* ImagePickerManager.swift in Sources */,
 				23B2087225C01FAF00927AA1 /* DateExtentions.swift in Sources */,
 				23CEAA5B25C2C9C100592CE9 /* Utils.swift in Sources */,
 				2361A83D25C55C48005F7B1A /* OptionViewController.swift in Sources */,
@@ -630,14 +613,15 @@
 				23B2084925C01CFA00927AA1 /* Color.swift in Sources */,
 				23CEAA4A25C2C7B200592CE9 /* PointAnimationView.swift in Sources */,
 				23B2084725C01CFA00927AA1 /* UserDefault.swift in Sources */,
+				23AD74A8260649F90047FE1A /* ChannelManager.swift in Sources */,
 				23CEAA2425C2BFDF00592CE9 /* VideoCallVC.swift in Sources */,
 				23B2084025C01CFA00927AA1 /* BaseNavigationController.swift in Sources */,
 				23B2087325C01FB000927AA1 /* StringExtension.swift in Sources */,
 				23B2087425C01FB000927AA1 /* UINavigationItemExtention.swift in Sources */,
 				23B2080625C01BD000927AA1 /* AppDelegate.swift in Sources */,
 				23B2084625C01CFA00927AA1 /* DeviceUtil.swift in Sources */,
-				23CEAA5225C2C82400592CE9 /* ChannelManager.swift in Sources */,
 				2361A85325C5715C005F7B1A /* CheckBox.swift in Sources */,
+				23AD74A7260649F90047FE1A /* ImagePickerManager.swift in Sources */,
 				2361A84525C56611005F7B1A /* UIViewConstraintExtention.swift in Sources */,
 				2361A84F25C56D45005F7B1A /* ConnectionViewController.swift in Sources */,
 				23CEAA5825C2C93000592CE9 /* UserDefaultExtention.swift in Sources */,
@@ -781,7 +765,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4958ZLK95R;
+				DEVELOPMENT_TEAM = L5Q8584KE5;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = "$(SRCROOT)/LiveApp/Sources/App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -789,7 +773,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dex.LiveApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -811,7 +795,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dex.LiveApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
