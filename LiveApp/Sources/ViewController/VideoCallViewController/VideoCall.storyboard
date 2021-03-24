@@ -32,27 +32,25 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMh-ke-zSb">
                                 <rect key="frame" x="0.0" y="752" width="414" height="110"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4sF-Yw-kSv">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="4sF-Yw-kSv">
+                                        <rect key="frame" x="117" y="0.0" width="180" height="110"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UZY-mN-GTx">
-                                                <rect key="frame" x="0.0" y="0.0" width="138" height="110"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="110"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHa-U3-877">
-                                                        <rect key="frame" x="34" y="20" width="70" height="70"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <rect key="frame" x="0.0" y="35" width="40" height="40"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="gHa-U3-877" secondAttribute="height" multiplier="1:1" id="ejc-69-jY1"/>
-                                                            <constraint firstAttribute="height" constant="70" id="wCv-oM-t8K"/>
+                                                            <constraint firstAttribute="width" constant="40" id="F8O-ln-Ptg"/>
+                                                            <constraint firstAttribute="height" constant="40" id="IZT-ol-Gj5"/>
                                                         </constraints>
-                                                        <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                                        <state key="normal" image="ic_chanage_camera"/>
+                                                        <state key="normal" image="btn_change_camera"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="35"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
+                                                                <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                 <color key="value" systemColor="labelColor"/>
@@ -64,28 +62,28 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="gHa-U3-877" firstAttribute="leading" secondItem="UZY-mN-GTx" secondAttribute="leading" id="08t-RI-tPP"/>
                                                     <constraint firstItem="gHa-U3-877" firstAttribute="centerX" secondItem="UZY-mN-GTx" secondAttribute="centerX" id="4Uw-Yd-wQX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gHa-U3-877" secondAttribute="trailing" id="rh6-mH-Lpd"/>
                                                     <constraint firstItem="gHa-U3-877" firstAttribute="centerY" secondItem="UZY-mN-GTx" secondAttribute="centerY" id="rkT-b4-LkN"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3R-sM-x92">
-                                                <rect key="frame" x="138" y="0.0" width="138" height="110"/>
+                                                <rect key="frame" x="70" y="0.0" width="40" height="110"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQG-iu-TR9">
-                                                        <rect key="frame" x="34" y="20" width="70" height="70"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <rect key="frame" x="0.0" y="35" width="40" height="40"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="mQG-iu-TR9" secondAttribute="height" multiplier="1:1" id="CvK-N6-NB6"/>
-                                                            <constraint firstAttribute="height" constant="70" id="hGB-Je-h5T"/>
+                                                            <constraint firstAttribute="width" constant="40" id="X6h-RM-y4y"/>
+                                                            <constraint firstAttribute="height" constant="40" id="tbo-fN-477"/>
                                                         </constraints>
-                                                        <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                                        <state key="normal" image="ic_micro_on"/>
+                                                        <state key="normal" image="btn_mic_on"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="35"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
+                                                                <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                 <color key="value" systemColor="labelColor"/>
@@ -102,23 +100,23 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32o-d3-qX9">
-                                                <rect key="frame" x="276" y="0.0" width="138" height="110"/>
+                                                <rect key="frame" x="140" y="0.0" width="40" height="110"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNq-m0-sar">
-                                                        <rect key="frame" x="34" y="20" width="70" height="70"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <rect key="frame" x="0.0" y="35" width="40" height="40"/>
+                                                        <color key="backgroundColor" red="0.83137255909999996" green="0.83137255909999996" blue="0.83137255909999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="70" id="Iom-O2-VEu"/>
-                                                            <constraint firstAttribute="width" secondItem="sNq-m0-sar" secondAttribute="height" multiplier="1:1" id="hOb-aq-WmO"/>
+                                                            <constraint firstAttribute="height" constant="40" id="Dti-wN-vGV"/>
+                                                            <constraint firstAttribute="width" constant="40" id="aLM-Nb-JR3"/>
                                                         </constraints>
-                                                        <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                                         <state key="normal" image="ic_end_call"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="35"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
+                                                                <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                 <color key="value" systemColor="labelColor"/>
@@ -138,11 +136,10 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="4sF-Yw-kSv" firstAttribute="centerX" secondItem="hMh-ke-zSb" secondAttribute="centerX" id="3Z5-oA-BoS"/>
                                     <constraint firstAttribute="height" constant="110" id="Nwn-et-ERW"/>
-                                    <constraint firstAttribute="trailing" secondItem="4sF-Yw-kSv" secondAttribute="trailing" id="PeF-Zl-sNR"/>
                                     <constraint firstItem="4sF-Yw-kSv" firstAttribute="top" secondItem="hMh-ke-zSb" secondAttribute="top" id="cCc-gR-Xdl"/>
                                     <constraint firstAttribute="bottom" secondItem="4sF-Yw-kSv" secondAttribute="bottom" id="pNB-pz-6QO"/>
-                                    <constraint firstItem="4sF-Yw-kSv" firstAttribute="leading" secondItem="hMh-ke-zSb" secondAttribute="leading" id="zWU-tr-zV6"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYw-gv-HCP" userLabel="list background">
@@ -234,10 +231,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_chanage_camera" width="128" height="128"/>
+        <image name="btn_change_camera" width="36" height="36"/>
+        <image name="btn_mic_on" width="36" height="36"/>
         <image name="ic_change_background" width="128" height="128"/>
         <image name="ic_end_call" width="128" height="128"/>
-        <image name="ic_micro_on" width="128" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
