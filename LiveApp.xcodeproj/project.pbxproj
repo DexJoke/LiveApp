@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23205797260B8DE400A03266 /* ImagePickerManager copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205795260B8DE400A03266 /* ImagePickerManager copy.swift */; };
+		23205798260B8DE400A03266 /* ChannelManager copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23205796260B8DE400A03266 /* ChannelManager copy.swift */; };
 		2361A83D25C55C48005F7B1A /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2361A83C25C55C48005F7B1A /* OptionViewController.swift */; };
 		2361A84025C55CC5005F7B1A /* ConnectViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2361A83F25C55CC5005F7B1A /* ConnectViewController.storyboard */; };
 		2361A84525C56611005F7B1A /* UIViewConstraintExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2361A84425C56611005F7B1A /* UIViewConstraintExtention.swift */; };
@@ -23,8 +25,6 @@
 		23AB2887260653530046E0C4 /* TfliteWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 23AB2880260653530046E0C4 /* TfliteWrapper.mm */; };
 		23AB2888260653530046E0C4 /* OpencvCamera.mm in Sources */ = {isa = PBXBuildFile; fileRef = 23AB2881260653530046E0C4 /* OpencvCamera.mm */; };
 		23AB28982606538D0046E0C4 /* CustomVideosource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB28972606538D0046E0C4 /* CustomVideosource.swift */; };
-		23AD74A7260649F90047FE1A /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD74A5260649F90047FE1A /* ImagePickerManager.swift */; };
-		23AD74A8260649F90047FE1A /* ChannelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD74A6260649F90047FE1A /* ChannelManager.swift */; };
 		23B2080625C01BD000927AA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B2080525C01BD000927AA1 /* AppDelegate.swift */; };
 		23B2080F25C01BD100927AA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23B2080E25C01BD100927AA1 /* Assets.xcassets */; };
 		23B2081225C01BD100927AA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23B2081025C01BD100927AA1 /* LaunchScreen.storyboard */; };
@@ -71,6 +71,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23205795260B8DE400A03266 /* ImagePickerManager copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImagePickerManager copy.swift"; sourceTree = "<group>"; };
+		23205796260B8DE400A03266 /* ChannelManager copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChannelManager copy.swift"; sourceTree = "<group>"; };
 		2361A83C25C55C48005F7B1A /* OptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
 		2361A83F25C55CC5005F7B1A /* ConnectViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConnectViewController.storyboard; sourceTree = "<group>"; };
 		2361A84425C56611005F7B1A /* UIViewConstraintExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewConstraintExtention.swift; sourceTree = "<group>"; };
@@ -90,8 +92,6 @@
 		23AB2881260653530046E0C4 /* OpencvCamera.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpencvCamera.mm; sourceTree = "<group>"; };
 		23AB28972606538D0046E0C4 /* CustomVideosource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomVideosource.swift; sourceTree = "<group>"; };
 		23AB28A0260653E00046E0C4 /* LiveApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LiveApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		23AD74A5260649F90047FE1A /* ImagePickerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePickerManager.swift; path = ../../../../../../.Trash/ImagePickerManager.swift; sourceTree = "<group>"; };
-		23AD74A6260649F90047FE1A /* ChannelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChannelManager.swift; path = ../../../../../../.Trash/ChannelManager.swift; sourceTree = "<group>"; };
 		23B2080225C01BD000927AA1 /* LiveApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23B2080525C01BD000927AA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23B2080E25C01BD100927AA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -492,8 +492,8 @@
 		23CEAA4C25C2C82400592CE9 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				23AD74A6260649F90047FE1A /* ChannelManager.swift */,
-				23AD74A5260649F90047FE1A /* ImagePickerManager.swift */,
+				23205795260B8DE400A03266 /* ImagePickerManager copy.swift */,
+				23205796260B8DE400A03266 /* ChannelManager copy.swift */,
 			);
 			name = Manager;
 			path = ../../../livestream/livestream/Sources/Manager;
@@ -646,6 +646,7 @@
 				23B2086F25C01FAF00927AA1 /* UIColorExtension.swift in Sources */,
 				23B2084125C01CFA00927AA1 /* MessageAlert.swift in Sources */,
 				23CEAA2B25C2BFDF00592CE9 /* LiveStreamViewerVC.swift in Sources */,
+				23205797260B8DE400A03266 /* ImagePickerManager copy.swift in Sources */,
 				23CEAA2925C2BFDF00592CE9 /* TextChatCell.swift in Sources */,
 				23B2083F25C01CFA00927AA1 /* ApiUrl.swift in Sources */,
 				23B2089525C020CD00927AA1 /* ErrorResponse.swift in Sources */,
@@ -669,13 +670,13 @@
 				23B2089725C020CD00927AA1 /* HTTPStatusCode.swift in Sources */,
 				23B2085C25C01F1900927AA1 /* UserInforManager.swift in Sources */,
 				23AB28982606538D0046E0C4 /* CustomVideosource.swift in Sources */,
+				23205798260B8DE400A03266 /* ChannelManager copy.swift in Sources */,
 				23B2089625C020CD00927AA1 /* BaseError.swift in Sources */,
 				23AB2875260652EB0046E0C4 /* ImageViewCell.swift in Sources */,
 				23B2084325C01CFA00927AA1 /* BaseViewController.swift in Sources */,
 				23B2084925C01CFA00927AA1 /* Color.swift in Sources */,
 				23CEAA4A25C2C7B200592CE9 /* PointAnimationView.swift in Sources */,
 				23B2084725C01CFA00927AA1 /* UserDefault.swift in Sources */,
-				23AD74A8260649F90047FE1A /* ChannelManager.swift in Sources */,
 				23CEAA2425C2BFDF00592CE9 /* VideoCallVC.swift in Sources */,
 				23B2084025C01CFA00927AA1 /* BaseNavigationController.swift in Sources */,
 				23B2087325C01FB000927AA1 /* StringExtension.swift in Sources */,
@@ -683,7 +684,6 @@
 				23B2080625C01BD000927AA1 /* AppDelegate.swift in Sources */,
 				23B2084625C01CFA00927AA1 /* DeviceUtil.swift in Sources */,
 				2361A85325C5715C005F7B1A /* CheckBox.swift in Sources */,
-				23AD74A7260649F90047FE1A /* ImagePickerManager.swift in Sources */,
 				2361A84525C56611005F7B1A /* UIViewConstraintExtention.swift in Sources */,
 				2361A84F25C56D45005F7B1A /* ConnectionViewController.swift in Sources */,
 				23CEAA5825C2C93000592CE9 /* UserDefaultExtention.swift in Sources */,

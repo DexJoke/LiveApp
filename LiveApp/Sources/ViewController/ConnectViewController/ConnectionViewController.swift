@@ -29,7 +29,8 @@ class ConnectionViewController: BaseViewController {
         presenter = ConnectionPresenter(delegate: self)
         txtUserName.text = "user" + "_" + randomString(length: 3)
         txtRoomName.text = "room1"
-        
+        title = connectionType == .videoCall ? "Video Call" : "Live Stream"
+
         addGradienBackground()
         updateViewForLive()
     }
@@ -43,7 +44,6 @@ class ConnectionViewController: BaseViewController {
         if ckHost.isChecked {
             return
         }
-        
         updateViewForOption()
     }
     

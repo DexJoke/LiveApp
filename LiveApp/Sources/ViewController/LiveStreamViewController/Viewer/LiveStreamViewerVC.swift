@@ -17,7 +17,6 @@ class LiveStreamViewerVC: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var remoteVideoView: UIView!
     @IBOutlet weak var hostInforView: UIView!
-    @IBOutlet weak var hostAvatarImgV: UIImageView!
     @IBOutlet weak var roomNameLbl: UILabel!
     @IBOutlet weak var speckerButton: UIButton!
     @IBOutlet weak var likeAnimationView: LikeAnimationView!
@@ -94,7 +93,6 @@ class LiveStreamViewerVC: BaseViewController {
     
     private func displayInforHost() {
         self.roomNameLbl.text = self.tokenModel.roomName
-        self.hostAvatarImgV.sd_setImage(with: URL(string: tokenModel.hostAvatar ?? ""), placeholderImage: UIImage(named: "avatar_default.png"))
     }
     //MARK:- viewWillDisappear
     override func viewWillDisappear(_ animated: Bool) {
